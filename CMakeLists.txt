@@ -17,9 +17,8 @@ if(FALSE)
     endif()
 endif()
 
-if(TRUE)
-    execute_process(COMMAND git submodule update --init --recursive))
-endif()
+execute_process(COMMAND git submodule update --init --recursive
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_subdirectory(extern/GFA)
 
