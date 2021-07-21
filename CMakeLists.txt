@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(FaaRay VERSION 0.1 LANGUAGES CXX)
 
-if(FALSE)
+if(TRUE)
     find_package(Git QUIET)
     message(STATUS "Submodule update")
     message(STATUS ${GIT_EXECUTABLE})
