@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(FaaRay VERSION 0.1 LANGUAGES CXX)
 
+execute_process(COMMAND git submodule update --init --recursive)
+
 add_subdirectory(extern/GFA)
 
 file(GLOB MORE_TARGETS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} */*.cpp )
