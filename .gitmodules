@@ -1,0 +1,3 @@
+[submodule "extern/GFA"]
+	path = extern/GFA
+	url = https://github.com/faalbers/GFA
