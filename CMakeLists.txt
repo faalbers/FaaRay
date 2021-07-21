@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(FaaRay VERSION 0.1 LANGUAGES CXX)
 
-if(TRUE)
+if(FALSE)
     find_package(Git QUIET)
     message(STATUS "Submodule update")
     message(STATUS ${GIT_EXECUTABLE})
@@ -15,6 +15,10 @@ if(TRUE)
     if(NOT GIT_SUBMOD_RESULT EQUAL "0")
         message(FATAL_ERROR "git submodule update --init --recursive failed with ${GIT_SUBMOD_RESULT}, please checkout submodules")
     endif()
+endif()
+
+if(TRUE)
+    execute_process(COMMAND git submodule update --init --recursive))
 endif()
 
 add_subdirectory(extern/GFA)
