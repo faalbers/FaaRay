@@ -17,8 +17,10 @@ public:
     virtual ~Camera();                           
 
     void setEye(const GFA::Point3D &eye);
+    void setEye(const GFA::Scalar &x, const GFA::Scalar &y, const GFA::Scalar &z);
     const GFA::Point3D & getEye() const;
     void setLookAt(const GFA::Point3D &lookAt);
+    void setLookAt(const GFA::Scalar &x, const GFA::Scalar &y, const GFA::Scalar &z);
    
     void            computeUVW();
 

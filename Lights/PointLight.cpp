@@ -44,6 +44,11 @@ GFA::RGBColor FaaRay::PointLight::L(FaaRay::TraceThread &ttRef) const
     return (color_ * ls_);
 }
 
+void FaaRay::PointLight::setColor(const GFA::Scalar &r, const GFA::Scalar &g, const GFA::Scalar &b)
+{
+    color_.r = r; color_.g = g; color_.b = b; color_.a = 1.0; 
+}
+
 FaaRay::PointLightSPtr FaaRay::MakePointLightSPtr()
 {
     return std::make_shared<FaaRay::PointLight>();

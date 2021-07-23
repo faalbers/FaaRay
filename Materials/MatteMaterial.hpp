@@ -21,7 +21,7 @@ class MatteMaterial : public FaaRay::Material
         void setCd(
             const GFA::Scalar &r,
             const GFA::Scalar &g,
-            const GFA::Scalar &b) const;
+            const GFA::Scalar &b);
         
         virtual const GFA::RGBColor & getDiffuseCd() const;
         virtual void shade(FaaRay::TraceThread &ttRef) const;

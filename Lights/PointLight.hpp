@@ -25,6 +25,7 @@ public:
 
     void setRadiance(const GFA::Scalar b) { ls_ = b; }
     void setColor(const GFA::RGBColor color) { color_ = color; }
+    void setColor(const GFA::Scalar &r, const GFA::Scalar &g, const GFA::Scalar &b);
 
 private:
     GFA::Point3D    center_; // center point of the point light

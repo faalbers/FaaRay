@@ -32,7 +32,7 @@ void FaaRay::MatteMaterial::setCd(const GFA::RGBColor &c)
 void FaaRay::MatteMaterial::setCd(
             const GFA::Scalar &r,
             const GFA::Scalar &g,
-            const GFA::Scalar &b) const
+            const GFA::Scalar &b)
 {
     ambientBrdfPtr_->setCd(r, g, b);
     diffuseBrdfPtr_->setCd(r, g, b);

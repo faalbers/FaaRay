@@ -15,6 +15,11 @@ void FaaRay::Camera::setEye(const GFA::Point3D &eye)
     eye_ = eye;
 }
 
+void FaaRay::Camera::setEye(const GFA::Scalar &x, const GFA::Scalar &y, const GFA::Scalar &z)
+{
+    eye_.x = x; eye_.y = y; eye_.z = z; 
+}
+
 const GFA::Point3D & FaaRay::Camera::getEye() const
 {
     return eye_;
@@ -23,6 +28,11 @@ const GFA::Point3D & FaaRay::Camera::getEye() const
 void FaaRay::Camera::setLookAt(const GFA::Point3D &lookAt)
 {
     lookAt_ = lookAt;
+}
+
+void FaaRay::Camera::setLookAt(const GFA::Scalar &x, const GFA::Scalar &y, const GFA::Scalar &z)
+{
+    lookAt_.x = x; lookAt_.y = y; lookAt_.z = z; 
 }
 
 void FaaRay::Camera::computeUVW()
