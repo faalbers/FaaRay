@@ -15,7 +15,7 @@ class GeometricObject : public FaaRay::Base
 {
 public:
     GeometricObject();      // default constructor
-    ~GeometricObject();     // destructor
+    virtual ~GeometricObject();     // destructor
     
     virtual bool hit(FaaRay::TraceThread &ttRef, GFA::Scalar &tmin, GFA::Normal &srNormal) const = 0;
     virtual bool shadowHit(FaaRay::TraceThread &ttRef, GFA::Scalar &tmin) const = 0;

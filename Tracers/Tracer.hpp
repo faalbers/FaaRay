@@ -13,7 +13,7 @@ class Tracer : public Base
 {
     public:
         Tracer();
-        ~Tracer();
+        virtual ~Tracer();
         
         virtual void traceRay(TraceThread &ttRef) const = 0;
 };

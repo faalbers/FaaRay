@@ -20,6 +20,7 @@ public:
     void setViewPlaneSPtr(FaaRay::ViewPlaneSPtr viewPlaneSPtr);
 
     void setMultiThread();
+    void setOneThread();
     
     void render() const;
 

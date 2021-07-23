@@ -43,6 +43,11 @@ void FaaRay::RenderJob::setMultiThread()
 {
     multiThread_ = true;
 }
+
+void FaaRay::RenderJob::setOneThread()
+{
+    multiThread_ = false;
+}
   
 void  FaaRay::RenderJob::render() const
 {   
@@ -92,11 +97,12 @@ void FaaRay::RenderJob::renderOneThread_() const
         tt->y = i / tt->width;
         tt->render();
     }
+    std::cout << "\n**** RenderJob:renderOneThread Done ****\n";
 }
 
 void FaaRay::RenderJob::renderMultiThread_() const
 {
-    std::cout << "\n**** RenderJob:renderOneThread ****\n";
+    std::cout << "\n**** RenderJob:renderMultiThread ****\n";
     
     //NOTE: Needs warning
     if (viewPlaneSPtr_.use_count() == 0 || sceneSPtr_.use_count() == 0) return;
@@ -114,4 +120,5 @@ void FaaRay::RenderJob::renderMultiThread_() const
         tthreads.push_back(new std::thread(&FaaRay::TraceThread::renderBlock, tt));
     }
     for (std::thread *tthread : tthreads ) tthread->join();
+    std::cout << "\n**** RenderJob:renderMultiThread Done ****\n";
 }
