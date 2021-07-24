@@ -59,6 +59,11 @@ void FaaRay::ViewPlane::setPixel(
     setGUIPixel_(x, y, col);
 }
 
+GFA::RGBColor FaaRay::ViewPlane::getPixel(GFA::Index x, GFA::Index y)
+{
+    return frameBufferPtr_->getPixel(x, y);
+}
+
 void FaaRay::ViewPlane::setNumSamples(const GFA::Size &numSamples)
 {
     if (samplerSPtr_->numSamples() == numSamples) return;

@@ -22,7 +22,9 @@ class ViewPlane : public FaaRay::Base
         const GFA::Size   & numSamples() const;
         
         void setPixel(const GFA::Index &x, const GFA::Index &y,
-            const GFA::RGBColor &col) const; 
+            const GFA::RGBColor &col) const;
+        
+        GFA::RGBColor getPixel(GFA::Index x, GFA::Index y);
     
         void setNumSamples(const GFA::Size &numSamples);
         const FaaRay::Sampler * getSamplerPtr() const;
