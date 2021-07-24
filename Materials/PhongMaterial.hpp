@@ -23,10 +23,14 @@ class PhongMaterial : public FaaRay::Material
         void setCd(
             const GFA::Scalar &r,
             const GFA::Scalar &g,
-            const GFA::Scalar &b) const;
+            const GFA::Scalar &b);
         
         void setKs(const GFA::Scalar k);
         void setCs(const GFA::RGBColor &c);
+        void setCs(
+            const GFA::Scalar &r,
+            const GFA::Scalar &g,
+            const GFA::Scalar &b);
         void setExp(const GFA::Scalar exp);
 
         virtual const GFA::RGBColor & getDiffuseCd() const;

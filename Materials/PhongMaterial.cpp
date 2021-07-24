@@ -39,7 +39,7 @@ void FaaRay::PhongMaterial::setCd(const GFA::RGBColor &c)
 void FaaRay::PhongMaterial::setCd(
             const GFA::Scalar &r,
             const GFA::Scalar &g,
-            const GFA::Scalar &b) const
+            const GFA::Scalar &b)
 {
     ambientBrdfPtr_->setCd(r, g, b);
     diffuseBrdfPtr_->setCd(r, g, b);
@@ -52,6 +52,15 @@ void FaaRay::PhongMaterial::setKs(const GFA::Scalar k)
 
 void FaaRay::PhongMaterial::setCs(const GFA::RGBColor &c)
 {
+    specularBrdfPtr_->setCs(c);
+}
+
+void FaaRay::PhongMaterial::setCs(
+            const GFA::Scalar &r,
+            const GFA::Scalar &g,
+            const GFA::Scalar &b)
+{
+    GFA::RGBColor c(r, g, b);
     specularBrdfPtr_->setCs(c);
 }
 
