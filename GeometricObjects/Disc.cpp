@@ -53,19 +53,22 @@ bool FaaRay::Disc::hit(FaaRay::TraceThread &ttRef, GFA::Scalar &tmin, GFA::Norma
     srNormal      = normal_;
 
     return (true);
-
 }
 
 bool FaaRay::Disc::shadowHit(FaaRay::TraceThread &ttRef, GFA::Scalar &tmin) const
 {
     GFA::Scalar t = (center_ - ttRef.sRayOrigin) * normal_ / (ttRef.sRayDirection * normal_);
 
-    if (t > GFA::EPSILON) {
-        tmin = t;
-        return true;
-    }
+	if (t <= GFA::EPSILON)
+		return (false);
 
-    return false;
+    GFA::Point3D localHitPoint = ttRef.sRayOrigin + ttRef.sRayDirection * t;
+    if ( (localHitPoint - center_).length() > radius_ )
+        return (false);
+
+    tmin = t;
+
+    return (true);
 }
 
 FaaRay::DiscSPtr FaaRay::MakeDiscSPtr()
