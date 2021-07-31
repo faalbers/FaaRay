@@ -3,9 +3,8 @@
 #include "Scene/Scene.hpp"
 #include "Scene/ViewPlane.hpp"
 #include "Render/TraceThread.hpp"
-//#include <stdlib.h>
-//#include <time.h>
 #include <thread>
+#include <chrono>
 
 FaaRay::RenderJob::RenderJob()
     : viewPlaneSPtr_(nullptr)
@@ -51,10 +50,15 @@ void FaaRay::RenderJob::setOneThread()
   
 void  FaaRay::RenderJob::render() const
 {   
+    auto t1 = std::chrono::high_resolution_clock::now();
     if (multiThread_)
         renderMultiThread_();
     else
         renderOneThread_();
+    auto t2 = std::chrono::high_resolution_clock::now();
+
+    auto ms_int = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
+    std::cout << "Render Time: " << ms_int.count() << "ms\n";
 }
 
 void FaaRay::RenderJob::setupTraceThread_(FaaRay::TraceThreadSPtr ttRef) const
