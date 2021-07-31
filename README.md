@@ -1,13 +1,13 @@
 # FaaRay
 
-Ray Tracer from the ground up by Frank Aalbers uisng
+Ray Tracer library from the ground up by Frank Aalbers uisng
 [GFA](https://github.com/faalbers/GFA)
 3D data library.
 
 ### git clone:
 
 ```
-git clone --recursive https://github.com/faalbers/FaaRay.git
+git clone --recursive -b stable https://github.com/faalbers/FaaRay.git
 ```
 
 ### git clone in vscode:
