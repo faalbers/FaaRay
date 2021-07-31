@@ -1,9 +1,25 @@
-Ray Tracer from the ground up by Frank Aalbers
+# FaaRay
 
-cloning FaaRay:
+Ray Tracer from the ground up by Frank Aalbers uisng
+[GFA](https://github.com/faalbers/GFA)
+3D data library.
+
+### git clone:
+
+```
 git clone --recursive https://github.com/faalbers/FaaRay.git
-in vscode: ctrl+sht+p Git: Clone (Recursive)
+```
 
-adding FaaRay as submodel:
-git submodule add -b stable https://github.com/faalbers/FaaRay extern/FaaRay
-git submodule update --init --recursive
+### git clone in vscode:
+
+```
+ctrl+sht+p -> Git: Clone (Recursive)
+```
+
+### build
+
+```
+cd FaaRay
+cmake -B build -D CMAKE_BUILD_TYPE:STRING=Release
+cmake --build build --config Release -j 10 --
+```
