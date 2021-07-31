@@ -16,6 +16,12 @@ git clone --recursive -b stable https://github.com/faalbers/FaaRay.git
 ctrl+sht+p -> Git: Clone (Recursive)
 ```
 
+### adding FaaRay as submodel:
+```
+git submodule add -b stable https://github.com/faalbers/FaaRay extern/FaaRay
+git submodule update --init --recursive
+```
+
 ### build
 
 ```
